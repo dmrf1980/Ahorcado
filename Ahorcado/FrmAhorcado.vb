@@ -45,33 +45,38 @@
         'posicion=Numero de la lerta que coincide en "laPalabra"
         Dim posicion As Integer = Integer.Parse(laPalabra.IndexOf(e.KeyChar.ToString.ToUpper))
 
-        Dim letraPresionada As Char = e.KeyChar.ToString.ToUpper
+        Dim letraPresionada As String = e.KeyChar.ToString.ToUpper
 
         Dim cantDeLetras As Integer = laPalabra.Length - 1
 
-        numDeCaracter.Text = posicion.ToString
+        numDeCaracter.Text = posicion.ToString + 1
+        Label6.Text = laPalabra
 
         If LbLUsadas.Text.Contains(e.KeyChar.ToString.ToUpper) Then
             MsgBox("Letra repetida!", vbCritical)
         Else
             LbLUsadas.Text += e.KeyChar.ToString.ToUpper
-            
+
             If laPalabra.Contains(e.KeyChar.ToString.ToUpper) Then
                 'esta
                 'hay que programar
 
                 Label5.Text = LblPalabra.Text.Insert(posicion, letraPresionada)
 
-                Dim laPalabraArray As String
-                laPalabraArray = LblPalabra.Text
-                laPalabraArray.ToArray()
+                'Dim laPalabraArray As String
+                'laPalabraArray = LblPalabra.Text
+                'laPalabraArray.ToArray()
+                Do
+                    For l As Integer = 0 To laPalabra.Length - 1
+                        If LblPalabra.Text(l) = "-" Then
+                            LblPalabra.Text = LblPalabra.Text.Remove(posicion, 1)
+                            LblPalabra.Text = LblPalabra.Text.Insert(posicion, letraPresionada)
+                        End If
 
-                For l As Integer = 0 To laPalabraArray.Length - 1
+                    Next
+                Loop Until LblPalabra.Text <> "-"
 
 
-                    LblPalabra.Text = laPalabraArray.Insert(posicion, letraPresionada)
-
-                Next
                 'debe mostrar la letra ingresada en todas las posiciones en la que aparezca la palabra
 
                 'si acerto la palabra debe preguntar si desea jugar de nuevo

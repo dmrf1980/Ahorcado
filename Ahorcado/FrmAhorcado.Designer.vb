@@ -36,6 +36,7 @@ Partial Class FrmAhorcado
         Me.Label4 = New System.Windows.Forms.Label()
         Me.numDeCaracter = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'LbLUsadas
@@ -85,7 +86,7 @@ Partial Class FrmAhorcado
         Me.Lbl_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 72.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_2.Location = New System.Drawing.Point(132, 147)
         Me.Lbl_2.Name = "Lbl_2"
-        Me.Lbl_2.Size = New System.Drawing.Size(71, 108)
+        Me.Lbl_2.Size = New System.Drawing.Size(48, 108)
         Me.Lbl_2.TabIndex = 1
         Me.Lbl_2.Text = "|"
         Me.Lbl_2.Visible = False
@@ -93,7 +94,7 @@ Partial Class FrmAhorcado
         'Lbl_4
         '
         Me.Lbl_4.Font = New System.Drawing.Font("Microsoft Sans Serif", 72.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_4.Location = New System.Drawing.Point(172, 147)
+        Me.Lbl_4.Location = New System.Drawing.Point(173, 148)
         Me.Lbl_4.Name = "Lbl_4"
         Me.Lbl_4.Size = New System.Drawing.Size(73, 108)
         Me.Lbl_4.TabIndex = 1
@@ -172,11 +173,20 @@ Partial Class FrmAhorcado
         Me.Label5.Size = New System.Drawing.Size(126, 29)
         Me.Label5.TabIndex = 5
         '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.Label6.Location = New System.Drawing.Point(42, 13)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(154, 23)
+        Me.Label6.TabIndex = 6
+        '
         'FrmAhorcado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(489, 406)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.numDeCaracter)
         Me.Controls.Add(Me.Label4)
@@ -213,4 +223,5 @@ Partial Class FrmAhorcado
     Friend WithEvents Label4 As Label
     Friend WithEvents numDeCaracter As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class

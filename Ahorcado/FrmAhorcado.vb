@@ -57,7 +57,7 @@
         Dim cantDeLetras As Integer = laPalabra.Length - 1
         Dim aciertos As Integer
 
-        numDeCaracter.Text = posicion.ToString + 1 '#BORRAR**********************************
+        'numDeCaracter.Text = posicion.ToString + 1 '#BORRAR**********************************
         Label6.Text = laPalabra '#BORRAR****************************************************
 
         If LbLUsadas.Text.Contains(e.KeyChar.ToString.ToUpper) Then
@@ -66,27 +66,28 @@
         Else
             LbLUsadas.Text += e.KeyChar.ToString.ToUpper
 
+
             If laPalabra.Contains(e.KeyChar.ToString.ToUpper) Then
                 'esta
                 aciertos += 1
                 'hay que programar
                 Label5.Text = LblPalabra.Text.Remove(posicion, 1).Insert(posicion, letraPresionada) '#BORRAR********************
-                For Each item As String In LblPalabra.Text
 
-                    For l As Integer = 0 To laPalabra.Length - 1
 
-                        If LblPalabra.Text(l) = "-" Then
-                            LblPalabra.Text = LblPalabra.Text.Remove(posicion, 1).Insert(posicion, letraPresionada)
-                            'LblPalabra.Text = LblPalabra.Text.Insert(posicion, letraPresionada)
-                        End If
+                For l As Integer = 0 To laPalabra.Length - 1
 
-                    Next
+                    If LblPalabra.Text(l) = "-" Then
+                        LblPalabra.Text = LblPalabra.Text.Remove(posicion, 1).Insert(posicion, letraPresionada)
+                        'LblPalabra.Text = LblPalabra.Text.Insert(posicion, letraPresionada)
+                    End If
+
                 Next
+
                 'debe mostrar la letra ingresada en todas las posiciones en la que aparezca la palabra
                 'si acerto la palabra debe preguntar si desea jugar de nuevo
-                If aciertos > cantDeLetras Then
-                    MsgBox("Gano!!!")
-                End If
+                'If aciertos > cantDeLetras Then
+                'MsgBox("Gano!!!")
+                'End If
             Else
                 'no esta
                 errores += 1
@@ -98,6 +99,7 @@
                     End If
                 End If
             End If
+
         End If
     End Sub
 

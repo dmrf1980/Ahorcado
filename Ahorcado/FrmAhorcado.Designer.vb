@@ -34,7 +34,7 @@ Partial Class FrmAhorcado
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.numDeCaracter = New System.Windows.Forms.Label()
+        Me.posicionDeCaracter = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -157,13 +157,13 @@ Partial Class FrmAhorcado
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "Numero de letra"
         '
-        'numDeCaracter
+        'posicionDeCaracter
         '
-        Me.numDeCaracter.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.numDeCaracter.Location = New System.Drawing.Point(409, 129)
-        Me.numDeCaracter.Name = "numDeCaracter"
-        Me.numDeCaracter.Size = New System.Drawing.Size(76, 29)
-        Me.numDeCaracter.TabIndex = 5
+        Me.posicionDeCaracter.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.posicionDeCaracter.Location = New System.Drawing.Point(409, 129)
+        Me.posicionDeCaracter.Name = "posicionDeCaracter"
+        Me.posicionDeCaracter.Size = New System.Drawing.Size(76, 29)
+        Me.posicionDeCaracter.TabIndex = 5
         '
         'Label5
         '
@@ -188,7 +188,7 @@ Partial Class FrmAhorcado
         Me.ClientSize = New System.Drawing.Size(597, 406)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.numDeCaracter)
+        Me.Controls.Add(Me.posicionDeCaracter)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -221,7 +221,7 @@ Partial Class FrmAhorcado
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents numDeCaracter As Label
+    Friend WithEvents posicionDeCaracter As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
 End Class

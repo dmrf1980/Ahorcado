@@ -81,10 +81,6 @@
                         Application.Exit()
                     End If
                 End If
-
-
-
-
             Else
                 'no esta
                 errores += 1

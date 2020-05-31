@@ -12,14 +12,12 @@
 
     Private Sub FrmAhorcado_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
 
-        Dim i As Integer
-
         LbLUsadas.Text = ""
         LblPalabra.Text = ""
 
         laPalabra = laPalabra.ToUpper
 
-        For i = 0 To laPalabra.Length - 1
+        For i As Integer = 0 To laPalabra.Length - 1
             If laPalabra(i) = "" Then
                 LblPalabra.Text += "/"
             Else
@@ -50,56 +48,54 @@
     End Function
 
     Private Sub FrmAhorcado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
-        'posicion=Numero de la lerta que coincide en "laPalabra"
-        Dim posicion As Integer = Integer.Parse(laPalabra.IndexOf(e.KeyChar.ToString.ToUpper))
-        Dim posicionLP As Integer = Integer.Parse(LblPalabra.Text.IndexOf(LblPalabra.Text)) '*****************
-        Dim letraPresionada As String = e.KeyChar.ToString.ToUpper
-        Dim cantDeLetras As Integer = laPalabra.Length - 1
-        Dim aciertos As Integer
+        Dim letraPresionada As Char = e.KeyChar.ToString.ToUpper
+        Dim laPalabraNueva As String = ""
 
-        'numDeCaracter.Text = posicion.ToString + 1 '#BORRAR**********************************
-        Label6.Text = laPalabra '#BORRAR****************************************************
-
-        If LbLUsadas.Text.Contains(e.KeyChar.ToString.ToUpper) Then
+        If LbLUsadas.Text.Contains(letraPresionada) Then
 
             MsgBox("Letra repetida!", vbCritical)
         Else
-            LbLUsadas.Text += e.KeyChar.ToString.ToUpper
+            LbLUsadas.Text += letraPresionada
 
 
-            If laPalabra.Contains(e.KeyChar.ToString.ToUpper) Then
+            If laPalabra.Contains(letraPresionada) Then
                 'esta
-                aciertos += 1
                 'hay que programar
-                Label5.Text = LblPalabra.Text.Remove(posicion, 1).Insert(posicion, letraPresionada) '#BORRAR********************
 
-
-                For l As Integer = 0 To laPalabra.Length - 1
-
-                    If LblPalabra.Text(l) = "-" Then
-                        LblPalabra.Text = LblPalabra.Text.Remove(posicion, 1).Insert(posicion, letraPresionada)
-                        'LblPalabra.Text = LblPalabra.Text.Insert(posicion, letraPresionada)
+                For i As Integer = 0 To laPalabra.Length - 1
+                    If laPalabra(i) = letraPresionada Then
+                        laPalabraNueva += letraPresionada
+                    Else
+                        laPalabraNueva += LblPalabra.Text(i)
                     End If
-
                 Next
+                LblPalabra.Text = laPalabraNueva
 
                 'debe mostrar la letra ingresada en todas las posiciones en la que aparezca la palabra
-                'si acerto la palabra debe preguntar si desea jugar de nuevo
-                'If aciertos > cantDeLetras Then
-                'MsgBox("Gano!!!")
-                'End If
+                If laPalabra = laPalabraNueva.Replace("/", "") Then
+
+                    'si acerto la palabra debe preguntar si desea jugar de nuevo
+                    If MsgBox("Acertaste!! Quieres jugar de nuevo?", vbYesNo) = MsgBoxResult.Yes Then
+                        Application.Restart()
+                    Else
+                        Application.Exit()
+                    End If
+                End If
+
+
+
+
             Else
                 'no esta
                 errores += 1
                 If NoEsta() Then
-                    If MsgBox("Has perdido! Quieres jugar de nuevo?", vbYesNo) = MsgBoxResult.Yes Then
+                    If MsgBox("Has perdido!! Quieres jugar de nuevo?", vbYesNo) = MsgBoxResult.Yes Then
                         Application.Restart()
                     Else
                         Application.Exit()
                     End If
                 End If
             End If
-
         End If
     End Sub
 

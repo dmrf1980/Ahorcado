@@ -33,10 +33,6 @@ Partial Class FrmAhorcado
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.posicionDeCaracter = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'LbLUsadas
@@ -148,48 +144,11 @@ Partial Class FrmAhorcado
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Label3"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(409, 104)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(82, 13)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Numero de letra"
-        '
-        'posicionDeCaracter
-        '
-        Me.posicionDeCaracter.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.posicionDeCaracter.Location = New System.Drawing.Point(409, 129)
-        Me.posicionDeCaracter.Name = "posicionDeCaracter"
-        Me.posicionDeCaracter.Size = New System.Drawing.Size(76, 29)
-        Me.posicionDeCaracter.TabIndex = 5
-        '
-        'Label5
-        '
-        Me.Label5.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Label5.Location = New System.Drawing.Point(359, 177)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(126, 29)
-        Me.Label5.TabIndex = 5
-        '
-        'Label6
-        '
-        Me.Label6.BackColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Label6.Location = New System.Drawing.Point(42, 13)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(154, 23)
-        Me.Label6.TabIndex = 6
-        '
         'FrmAhorcado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(597, 406)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.posicionDeCaracter)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -220,8 +179,4 @@ Partial Class FrmAhorcado
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents posicionDeCaracter As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
 End Class
